@@ -1,0 +1,132 @@
+.footer {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 30px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* dark overlay */
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ✅ Make phone/email links white with hover effect */
+.contact-item a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: var(--primary-color, #02a75a); /* or custom hover color */
+}
+
+.social-row {
+  margin-top: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.social-icons a {
+  color: inherit;         /* Keeps icons white */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color, #02a75a); /* Icon hover color */
+}
+
+.footer-divider {
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.footer-links,
+.footer-terms {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-terms a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-terms a:hover {
+  color: #ff4081;
+}
+
+.footer-bottom {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer-bottom span {
+  font-weight: bold;
+}
+
+.footer-bottom .highlight {
+  color: #ffffff;
+}
+
+.footer-bottom .heart {
+  color: #e9e9e9;
+}
+
+.sk-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sk-link:hover {
+  text-decoration: underline;
+}

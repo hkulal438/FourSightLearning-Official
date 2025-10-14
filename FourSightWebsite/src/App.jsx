@@ -5,6 +5,7 @@ import Hero from './Hero/CarouselHero'
 import About from './About/About'
 import Team from './Team/Team'
 import WhyChoose from './WhyChoose/WhyChoose'
+import Footer from './Footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Team />
       <WhyChoose />
+      <Footer />
     </div>
   )
 }
