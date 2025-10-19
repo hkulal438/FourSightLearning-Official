@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Hero/CarouselHero.css";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const slidesData = [
   {
@@ -30,10 +31,6 @@ const CarouselHero = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesData.length);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slidesData.length) % slidesData.length);
-  };
-
   useEffect(() => {
     const interval = setInterval(nextSlide, slideInterval);
     return () => clearInterval(interval);
@@ -41,6 +38,15 @@ const CarouselHero = () => {
 
   return (
     <div className="carousel-hero-banner">
+      {/* === Right Side Social Media Icons === */}
+      <div className="social-icons right">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+      </div>
+
+      {/* === Carousel Slides === */}
       <div className="carousel-images">
         {slidesData.map((slide, index) => (
           <div
@@ -59,13 +65,7 @@ const CarouselHero = () => {
         ))}
       </div>
 
-      <button className="nav-button prev" onClick={prevSlide}>
-        &#10094;
-      </button>
-      <button className="nav-button next" onClick={nextSlide}>
-        &#10095;
-      </button>
-
+      {/* === Dots Indicators === */}
       <div className="carousel-indicators">
         {slidesData.map((_, index) => (
           <span

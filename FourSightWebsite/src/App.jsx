@@ -1,25 +1,21 @@
-import { useState } from 'react'
-// import './App.css'
-import Header from './components/Header/Header'
-import Hero from './Hero/CarouselHero'
-import About from './About/About'
-import Team from './Team/Team'
-import WhyChoose from './WhyChoose/WhyChoose'
-import Footer from './Footer/Footer'
+import React from "react";
+import Layout from "./Layout/Layout";
+import Hero from "./Hero/CarouselHero";
+import About from "./About/About";
+import Team from "./Team/Team";
+import WhyChoose from "./WhyChoose/WhyChoose";
+import Contact from './Contact/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <Header />
+    <Layout>
       <Hero />
       <About />
       <Team />
       <WhyChoose />
-      <Footer />
-    </div>
-  )
+      <Contact/>
+    </Layout>
+  );
 }
 
-export default App
+export default App;

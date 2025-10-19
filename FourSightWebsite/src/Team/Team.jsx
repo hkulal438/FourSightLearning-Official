@@ -1,109 +1,80 @@
-import React, { useState, useRef, useEffect } from "react";
-import "../Team/Team.css";
+import React from "react";
+import "./Team.css";
+import { FaFacebookF, FaTwitter, FaGooglePlusG, FaYoutube } from "react-icons/fa";
 
-// ✅ Import team images
 import Arun from "../images/Arun Peter.jpg";
 import Deepak from "../images/Deepak Raj.jpg";
 import Deeraj from "../images/Deeraj B.jpg";
 import Madhu from "../images/Madhusudan.jpg";
 
-const teamMembers = [
-  {
-    name: "Arun Peter",
-    title: "Founder & CEO",
-    img: Arun,
-    desc: `Arun leads Foursight Learning with a vision to transform education and corporate training through innovation and collaboration.`,
-  },
-  {
-    name: "Deepak Raj",
-    title: "Director of Operations",
-    img: Deepak,
-    desc: `Deepak oversees strategic planning and operational excellence, ensuring smooth execution across all company initiatives.`,
-  },
-  {
-    name: "Deeraj B",
-    title: "Technology Head",
-    img: Deeraj,
-    desc: `Deeraj drives the company’s digital transformation and manages all tech-driven educational solutions.`,
-  },
-  {
-    name: "Madhusudan",
-    title: "Learning Consultant",
-    img: Madhu,
-    desc: `Madhusudan brings years of expertise in training, development, and educational consulting to empower learners.`,
-  },
-];
-
 const Team = () => {
-  const [selected, setSelected] = useState(null);
-  const infoRef = useRef(null);
-
-  const handleSelect = (index) => {
-    const newIndex = selected === index ? null : index;
-    setSelected(newIndex);
-  };
-
-  useEffect(() => {
-    if (selected !== null && infoRef.current) {
-      infoRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [selected]);
+  const teamMembers = [
+    {
+      name: "Arun Peter",
+      title: "Founder & CEO",
+      img: Arun,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+    },
+    {
+      name: "Deepak Raj",
+      title: "CTO",
+      img: Deepak,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+    },
+    {
+      name: "Deeraj B",
+      title: "Creative Head",
+      img: Deeraj,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+    },
+    {
+      name: "Madhusudan",
+      title: "Marketing Lead",
+      img: Madhu,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+    },
+  ];
 
   return (
-    <div className="team-wrapper">
-      <div className="team-title">
-        <h1>Meet the Team</h1>
-        <p>Click on a photo to learn more</p>
+    <section className="team-section__container">
+      {/* New Heading */}
+      <div className="team-section__header">
+        <h2 className="team-section__main-heading">Meet The Team</h2>
+        <div className="team-section__underline"></div>
       </div>
 
-      {selected !== null && (
-        <div className="team-info" ref={infoRef}>
-          <div
-            className="team-info-image"
-            style={{ backgroundImage: `url(${teamMembers[selected].img})` }}
-          ></div>
-          <div className="team-info-details">
-            <h2>{teamMembers[selected].name}</h2>
-            <h3>{teamMembers[selected].title}</h3>
-            <p dangerouslySetInnerHTML={{ __html: teamMembers[selected].desc }} />
-          </div>
-        </div>
-      )}
+      <h1 className="team-section__title">Our Team</h1>
 
-      <div className="team-grid">
+      <div className="team-section__members">
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className={`team-card ${selected === index ? "active" : ""}`}
-            onClick={() => handleSelect(index)}
+            className={`team-section__member-card ${
+              index % 2 === 0 ? "team-section__card--up" : "team-section__card--down"
+            }`}
           >
-            <div className="image-container">
-              <img src={member.img} alt={member.name} className="profile-image" />
-              <div className="overlay">
-                <div className="overlay-text">
-                  <strong>{member.name}</strong>
-                  <br />
-                  {member.title}
-                </div>
+            <div className="team-section__image">
+              <img src={member.img} alt={member.name} />
+            </div>
+            <div className="team-section__info">
+              <h4>{member.name}</h4>
+              <h5>{member.title}</h5>
+              <p className="team-section__desc">{member.desc}</p>
+              <div className="team-section__social">
+                <a href="#"><FaFacebookF /></a>
+                <a href="#"><FaTwitter /></a>
+                <a href="#"><FaGooglePlusG /></a>
+                <a href="#"><FaYoutube /></a>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="pagination">
-        {teamMembers.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${selected === index ? "active" : ""}`}
-            onClick={() => handleSelect(index)}
-          ></span>
-        ))}
-      </div>
-    </div>
+      <footer className="team-section__footer">
+        <p>© 2025 Foursight Learning — All Rights Reserved</p>
+      </footer>
+    </section>
   );
 };
 

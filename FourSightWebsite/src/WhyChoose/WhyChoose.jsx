@@ -11,30 +11,40 @@ export default function WhyChooseSection() {
       { name: "Quick Response", description: "Immediate action and service", distance: "0 Delay", walkTime: "Fast Service" },
       { name: "Dedicated Assistance", description: "Personalized attention to your needs", distance: "Always On", walkTime: "Real-Time" },
       { name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
     ],
     quality: [
       { name: "Premium Materials", description: "We use only high-grade components", distance: "Top-notch", walkTime: "Reliable" },
       { name: "Expert Team", description: "Qualified professionals ensuring perfection", distance: "Skilled", walkTime: "Certified" },
       { name: "Consistent Standards", description: "Maintaining quality across all operations", distance: "Guaranteed", walkTime: "Uniform" },
       { name: "Trusted Brands", description: "Partnered with industry leaders", distance: "Recognized", walkTime: "Reputed" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
     ],
     affordability: [
       { name: "Competitive Pricing", description: "Best value for your money", distance: "Budget-Friendly", walkTime: "Smart Choice" },
       { name: "Transparent Costs", description: "No hidden charges, ever", distance: "Clear", walkTime: "Honest" },
       { name: "Flexible Plans", description: "Options for every budget", distance: "Customizable", walkTime: "Adaptable" },
       { name: "Discounts & Offers", description: "Exciting deals year-round", distance: "Save More", walkTime: "Rewarding" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
     ],
     trust: [
       { name: "Certified Excellence", description: "Recognized by top authorities", distance: "Verified", walkTime: "Approved" },
       { name: "Customer Satisfaction", description: "Thousands of happy clients", distance: "5-Star Rated", walkTime: "Reliable" },
       { name: "Safe & Secure", description: "Your data and experience are protected", distance: "Secure", walkTime: "Protected" },
       { name: "Long-Term Reliability", description: "We’re here for the long run", distance: "Sustainable", walkTime: "Committed" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
     ],
     innovation: [
       { name: "Cutting-Edge Technology", description: "Leveraging modern tools and systems", distance: "Next-Gen", walkTime: "Smart" },
       { name: "Creative Solutions", description: "Innovating to solve your challenges", distance: "Unique", walkTime: "Inspired" },
       { name: "Continuous Improvement", description: "Evolving with every step", distance: "Adaptive", walkTime: "Progressive" },
       { name: "Vision-Driven Team", description: "Future-ready mindset", distance: "Forward", walkTime: "Motivated" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
+      {name: "Hassle-Free Process", description: "Smooth and simple experience every time", distance: "Easy", walkTime: "Seamless" },
     ]
   };
 

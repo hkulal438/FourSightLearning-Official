@@ -1,96 +1,85 @@
-import React, { useState, useEffect } from "react";
-import "./Header.css";
+import React, { useState, useEffect } from 'react';
+import './Header.css';
+import logo from '../../images/4SightLearningLogo.png';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 900);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = (menu) => {
-    setOpenDropdown((prev) => (prev === menu ? null : menu));
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleDropdown = (menu) => {
+    setActiveDropdown(activeDropdown === menu ? null : menu);
   };
 
   return (
-    <header className="header">
-      <nav className="navbar">
-        <h2 className="logo">
-          Foursight<span>Learning</span>
-        </h2>
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="header-container">
+        {/* Logo */}
+        <div className="logo">
+          <a href="/">
+            <img src={logo} alt="Foursight Logo" />
+          </a>
+        </div>
 
-        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <ul>
-            <li><a href="#">Home</a></li>
+        {/* Navigation */}
+        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <ul className="nav-list">
+            <li><a href="/" className="nav-link">Home</a></li>
 
-            {/* ABOUT */}
             <li
-              className="dropdown"
-              onMouseEnter={() => !isMobile && setOpenDropdown("about")}
-              onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+              className={`dropdown ${activeDropdown === 'about' ? 'active' : ''}`}
+              onMouseEnter={() => setActiveDropdown('about')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
-                className="dropdown-toggle"
-                onClick={() => isMobile && toggleDropdown("about")}
-                aria-expanded={openDropdown === "about"}
-              >
-                About ▾
-              </button>
-
-              <ul className={`dropdown-menu ${openDropdown === "about" ? "show" : ""}`}>
-                <li><a href="#">Meet the People</a></li>
-                <li><a href="#">Why Foursight</a></li>
-                <li><a href="#">About the Company</a></li>
+              <button onClick={() => handleDropdown('about')} className="nav-link">About</button>
+              <ul className="dropdown-menu">
+                <li><a href="/team">Meet the Team</a></li>
+                <li><a href="/about-company">About Company</a></li>
+                <li><a href="/why-foursight">Why Foursight</a></li>
               </ul>
             </li>
 
-            {/* SERVICES */}
             <li
-              className="dropdown"
-              onMouseEnter={() => !isMobile && setOpenDropdown("services")}
-              onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+              className={`dropdown ${activeDropdown === 'services' ? 'active' : ''}`}
+              onMouseEnter={() => setActiveDropdown('services')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
-                className="dropdown-toggle"
-                onClick={() => isMobile && toggleDropdown("services")}
-                aria-expanded={openDropdown === "services"}
-              >
-                Services ▾
-              </button>
-
-              <ul className={`dropdown-menu ${openDropdown === "services" ? "show" : ""}`}>
-                <li><a href="#">Education Sector</a></li>
-                <li><a href="#">Corporate Sector</a></li>
-                <li><a href="#">Business Sector</a></li>
-                <li><a href="#">Government & Public Sector</a></li>
+              <button onClick={() => handleDropdown('services')} className="nav-link">Services</button>
+              <ul className="dropdown-menu">
+                <li><a href="/education">Education Sector</a></li>
+                <li><a href="/business">Business Sector</a></li>
+                <li><a href="/corporate">Corporate Sector</a></li>
+                <li><a href="/government">Government & Public Sector</a></li>
               </ul>
             </li>
 
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact-Us</a></li>
+            <li><a href="/gallery" className="nav-link">Gallery</a></li>
+            <li><a href="/contact" className="nav-link">Contact</a></li>
           </ul>
+        </nav>
 
-          <a href="#" className="button">Book Appointment</a>
+        {/* Right Actions */}
+        <div className="header-actions">
+          <a href="/appointment" className="appointment-btn">
+            Book an Appointment
+          </a>
+          <button
+            className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
-
-        <div
-          className={`hamburger ${menuOpen ? "active" : ""}`}
-          onClick={() => {
-            setMenuOpen(!menuOpen);
-            setOpenDropdown(null);
-          }}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
     </header>
   );
 };
