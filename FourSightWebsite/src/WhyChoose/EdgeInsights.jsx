@@ -1,11 +1,14 @@
 import React from "react";
 import "../WhyChoose/EdgeInsights.css";
 import { FaLightbulb, FaChartLine } from "react-icons/fa";
+import useScrollAnimation from "../useScrollAnimation"
 
 const EdgeInsights = () => {
+  useScrollAnimation(); // activate scroll animations
+
   return (
     <section className="fs-ei-section">
-      <div className="fs-ei-header">
+      <div className="fs-ei-header animate-fade-up">
         <h2>Our Edge & Key Insights</h2>
         <p>
           Discover what makes Foursight Learning stand apart — our innovation,
@@ -14,7 +17,7 @@ const EdgeInsights = () => {
       </div>
 
       <div className="fs-ei-cards">
-        <div className="fs-ei-card">
+        <div className="fs-ei-card animate-fade-up" style={{ transitionDelay: "0.2s" }}>
           <div className="fs-ei-icon">
             <FaLightbulb />
           </div>
@@ -26,7 +29,7 @@ const EdgeInsights = () => {
           </p>
         </div>
 
-        <div className="fs-ei-card">
+        <div className="fs-ei-card animate-fade-up" style={{ transitionDelay: "0.4s" }}>
           <div className="fs-ei-icon">
             <FaChartLine />
           </div>

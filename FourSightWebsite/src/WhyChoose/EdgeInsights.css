@@ -8,10 +8,10 @@
   color: #333;
 }
 
-.fs-ei-section h2,
-.fs-ei-section p {
-  margin-bottom: 30px; /* spacing between heading text and cards */
-  line-height: 1.6;    /* better readability */
+.fs-ei-header h2,
+.fs-ei-header p {
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .fs-ei-cards {
@@ -20,24 +20,18 @@
   justify-content: center;
   align-items: stretch;
   gap: 40px;
-  margin-top: 30px; /* space between text block and cards */
+  margin-top: 30px;
 }
 
 .fs-ei-card {
   flex: 1 1 420px;
   background: #fff;
   border-radius: 12px;
-  line-height: 1.8;
   padding: 40px 30px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   text-align: left;
   position: relative;
-  animation: fs-ei-fadeUp 0.8s ease both;
-}
-
-.fs-ei-card:nth-child(2) {
-  animation-delay: 0.2s;
 }
 
 .fs-ei-card:hover {
@@ -106,33 +100,22 @@
   line-height: 1;
 }
 
-/* Fade-up animation */
-@keyframes fs-ei-fadeUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* ================= Scroll Animations ================= */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .fs-ei-section {
-    padding: 50px 6%;
-  }
-
-  .fs-ei-card {
-    text-align: center;
-  }
-
-  .fs-ei-icon {
-    margin: 0 auto 18px auto;
-  }
-
-  .fs-ei-title::after {
-    margin: 8px auto 0 auto;
-  }
+  .fs-ei-section { padding: 50px 6%; }
+  .fs-ei-card { text-align: center; }
+  .fs-ei-icon { margin: 0 auto 18px auto; }
+  .fs-ei-title::after { margin: 8px auto 0 auto; }
 }
