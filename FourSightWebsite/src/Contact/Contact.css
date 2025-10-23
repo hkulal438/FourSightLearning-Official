@@ -1,146 +1,185 @@
-.contact-wrapper {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #333;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap');
 
-/* Header */
-.contact-header {
-  position: relative;
-  text-align: center;
-}
-
-.contact-bg {
+.contact-section {
+  font-family: 'Nunito', sans-serif;
+  background: #fff;
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  filter: brightness(70%);
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 }
 
-.contact-header-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
-  line-height: 1.4;
-}
-
-/* Content layout */
-.contact-content {
+.contact-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 50px 8%;
-  background: #fff;
-  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* Contact info */
-.contact-info {
-  flex: 1;
-  min-width: 300px;
-}
-
-.contact-info p {
-  font-size: 16px;
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-info a {
-  color: #0a8d4c;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-  color: #02a75a;
-}
-
-/* Form section */
+/* ---------- FORM ---------- */
 .contact-form {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
+  max-width: 450px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 50px 40px;
 }
 
-.contact-form h2 {
-  color: #0a8d4c;
-  font-size: 26px;
+.form-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-title {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  color: #9c9c9c;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  background-color: #f9f9f9;
+.form-group label {
+  font-size: 14px;
+  color: #9c9c9c;
+  margin-bottom: 5px;
 }
 
-.contact-form textarea {
-  height: 150px;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 15px;
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 140px;
   resize: none;
 }
 
-.contact-form button {
-  background-color: #0a8d4c;
-  color: white;
-  padding: 12px;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #03a9f4;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #03a9f4;
   border: none;
-  font-size: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 40px;
+  height: 55px;
   cursor: pointer;
-  width: 100%;
-  border-radius: 6px;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
-  background-color: #087b42;
+.submit-btn:hover {
+  background-color: #0286c2;
 }
 
-/* Map section */
-.contact-map-section {
-  padding: 60px 8%;
-  background-color: #fafafa;
+/* ---------- CONTACT INFO ---------- */
+.contact-info {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.contact-map-heading {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #0a8d4c;
-  margin-bottom: 25px;
+.info-content {
   text-align: left;
+  max-width: 500px;
 }
 
-.contact-map {
+.info-title {
+  font-size: 24px;
+  color: #03a9f4;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.info-text {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.map-box {
   width: 100%;
-  height: 400px;
-  overflow: hidden;
+  height: 320px;
+  background: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/sc23.png")
+    center/cover no-repeat;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-header-title {
-    font-size: 1.8rem;
-  }
-
-  .contact-content {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .contact-container {
     flex-direction: column;
-    padding: 30px 5%;
+    align-items: center;
   }
 
-  .contact-map-section {
-    padding: 40px 5%;
+  .contact-info {
+    text-align: center;
+  }
+
+  .info-content {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-title {
+    font-size: 28px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
   }
 }

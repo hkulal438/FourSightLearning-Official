@@ -1,0 +1,331 @@
+/* ================================
+   ROOT COLORS & BASE STYLES
+================================ */
+:root {
+  --primary: #8a6bf7;
+  --primary-dark: #6d4fe3;
+  --bg-light: #f5f6fb;
+  --card-bg: #ffffff;
+  --border: #e3e5ec;
+  --text-dark: #1f1f1f;
+  --text-light: #6b6b6b;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+.compact-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 50px 60px;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   LEFT PANEL — CALENDAR
+================================ */
+.compact-calendar-left {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 25px 30px 35px 30px;
+  width: 400px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.compact-calendar-left:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   CALENDAR HEADER (Month Navigation)
+================================ */
+.compact-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fd;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.compact-calendar-header .compact-prev,
+.compact-calendar-header .compact-next {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.compact-calendar-header .compact-prev:hover,
+.compact-calendar-header .compact-next:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.compact-calendar-header .compact-date {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  letter-spacing: 0.5px;
+}
+
+/* WEEKDAY HEADER */
+.compact-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+/* DAYS GRID */
+.compact-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.compact-day {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.compact-day:hover {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.compact-day.active {
+  background: var(--primary-dark);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(109, 79, 227, 0.4);
+}
+
+.compact-day.today {
+  border: 1px solid var(--primary);
+  color: var(--primary-dark);
+  font-weight: 600;
+  background: rgba(138, 107, 247, 0.08);
+}
+
+/* ================================
+   RIGHT PANEL — APPOINTMENT FORM
+================================ */
+.compact-calendar-right {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 40px 50px;
+  width: 420px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.compact-calendar-right:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* TODAY HEADER */
+.compact-today {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.compact-today h3 {
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.compact-today p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* ================================
+   BOOKING FORM
+================================ */
+.compact-appointment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.compact-appointment-form h4 {
+  color: var(--primary-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.compact-appointment-form input,
+.compact-appointment-form select {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fafaff;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.compact-appointment-form input:focus,
+.compact-appointment-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(138, 107, 247, 0.15);
+}
+
+.compact-appointment-form button {
+  width: 100%;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 11px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.compact-appointment-form button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   ADD EVENT FORM (NEW STYLE)
+================================ */
+.compact-add-event-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 320px;
+  transition: all 0.3s ease;
+}
+
+.compact-add-event-wrapper input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fafaff;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.compact-add-event-wrapper input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(138, 107, 247, 0.15);
+}
+
+.compact-add-event-wrapper .event-row {
+  display: flex;
+  gap: 8px;
+}
+
+.compact-add-event-wrapper .event-row input {
+  flex: 1;
+}
+
+.compact-add-event-wrapper .event-row button {
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.compact-add-event-wrapper .event-row button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* "+" Toggle Button */
+.compact-add-event-btn {
+  margin-top: 16px;
+  background: var(--primary-dark);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.compact-add-event-btn:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+  .compact-calendar-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .compact-calendar-left,
+  .compact-calendar-right {
+    width: 90%;
+    max-width: 420px;
+  }
+}

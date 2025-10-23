@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Footer/Footer.css";
-import BgImage from "../images/BgImage.avif";
+import bgImage from "../images/BgImage.avif";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -17,70 +18,110 @@ const Footer = () => {
     <footer
       className="footer"
       style={{
-        backgroundImage: `url(${BgImage})`,
+        backgroundImage: `url(${bgImage})`,
       }}
     >
       <div className="footer-content">
+        {/* Address */}
         <h3 className="footer-title">
-          Hotel Adithya Nest, Near Kumaradhara Snana Ghatta, Kukke Subrahmanya,
+          Foursight Learning, Near Kumaradhara Snana Ghatta, Kukke Subrahmanya, 
           Kadaba Taluk, D.K- Karnataka 574238
         </h3>
 
+        {/* Contact Info */}
         <div className="contact-row">
           <div className="contact-item">
-            <FaPhoneAlt />
-            <span> +91 9448123236</span>
-          </div>
-          <div className="contact-item">
-            <FaPhoneAlt />
-            <span> +91 8123663236</span>
-          </div>
-          <div className="contact-item">
-            <FaEnvelope />
-            <span> info@adithyanest.com</span>
+            <FaWhatsapp />
+            <a
+              href="https://wa.me/919448123236?text=Hi%2C%20Greetings%20from%20FoursightLearning"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +91 9448123236
+            </a>
           </div>
           <div className="contact-item">
             <FaWhatsapp />
-            <span> +91 9448123236</span>
+            <a
+              href="https://wa.me/918123663236?text=Hi%2C%20Greetings%20from%20FoursightLearning"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +91 8123663236
+            </a>
+          </div>
+          <div className="contact-item">
+            <FaEnvelope />
+            <a href="mailto:info@foursightlearning.com">
+              info@foursightlearning.com
+            </a>
           </div>
         </div>
 
+        {/* Social Media */}
         <div className="social-row">
           <p>Get In Touch</p>
           <div className="social-icons">
-            <span>
+            <a
+              href="https://www.facebook.com/foursightlearning"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF />
-            </span>
-            <span>
+            </a>
+            <a
+              href="https://x.com/foursightlearning"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaX />
-            </span>
-            <span>
-              <FaTripadvisor />
-            </span>
+            </a>
+            <a
+              href="https://www.youtube.com/foursightlearning"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube />
+            </a>
           </div>
         </div>
 
         <hr className="footer-divider" />
 
+        {/* Footer Links */}
         <div className="footer-links">
-          <span>Home</span>
-          <span>Room Type</span>
-          <span>Amenities</span>
-          <span>Rules and Policies</span>
-          <span>About</span>
-          <span>Contact</span>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/book-appointment">Book an Appointment</Link>
         </div>
 
         <div className="footer-terms">
-          <span>Terms And Conditions</span>
-          <span>Privacy Policy</span>
+          <Link to="/terms-and-conditions">Terms And Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
 
+        {/* Bottom Text */}
         <div className="footer-bottom">
           <p>
-            Copyright © 2025 <span>FoursightLearning</span>. All Rights Reserved |
-            <span> Weltraum Software Private Limited</span>, by
-            <span className="sk-link"> SK</span>️
+            Copyright © 2025 <span>foursightlearning.com</span>. All Rights Reserved |
+            <a
+              href="https://weltraumsoft.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Weltraum Software Private Limited
+            </a>, by
+            <a
+              href="https://shara7h.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sk-link"
+            >
+              SK
+            </a>
           </p>
         </div>
       </div>

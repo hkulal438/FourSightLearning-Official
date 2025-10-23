@@ -1,4 +1,4 @@
-/* Base resets */
+/* ================= Base Resets ================= */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -24,7 +24,7 @@ section {
   padding: 60px 0;
 }
 
-/* Section Wrapper */
+/* ================= About Section ================= */
 .about-section {
   position: relative;
   padding: 120px 0 70px;
@@ -43,7 +43,7 @@ section {
   align-items: center;
 }
 
-/* Text Column */
+/* Content Column */
 .content-column {
   flex: 1;
   padding: 20px;
@@ -171,7 +171,7 @@ section {
   border-radius: 10px;
 }
 
-/* 📱 Responsive Design */
+/* ================= Responsive Design ================= */
 @media (max-width: 992px) {
   .sec-title h2 {
     font-size: 32px;
@@ -236,4 +236,37 @@ section {
   .text {
     font-size: 15px;
   }
+}
+
+/* ================= Scroll Animations ================= */
+.animate-fade-up,
+.animate-fade-right,
+.animate-fade-left,
+.animate-zoom-in {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.animate-fade-up {
+  transform: translateY(50px);
+}
+
+.animate-fade-right {
+  transform: translateX(-50px);
+}
+
+.animate-fade-left {
+  transform: translateX(50px);
+}
+
+.animate-zoom-in {
+  transform: scale(0.8);
+}
+
+.animate-fade-up.active,
+.animate-fade-right.active,
+.animate-fade-left.active,
+.animate-zoom-in.active {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
 }

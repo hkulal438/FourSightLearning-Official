@@ -13,37 +13,34 @@ const Team = () => {
       name: "Arun Peter",
       title: "Founder & CEO",
       img: Arun,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+      desc: "Arun is the visionary behind Foursight Learning, driving innovation and strategy across all domains.",
     },
     {
       name: "Deepak Raj",
       title: "CTO",
       img: Deepak,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+      desc: "Deepak leads the technical initiatives and ensures our systems stay scalable and secure.",
     },
     {
       name: "Deeraj B",
       title: "Creative Head",
       img: Deeraj,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+      desc: "Deeraj crafts our visual identity and user experience with creativity and precision.",
     },
     {
       name: "Madhusudan",
       title: "Marketing Lead",
       img: Madhu,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, amet. Dolorum, a quidem sapiente at harum numquam vero consectetur distinctio natus alias.",
+      desc: "Madhu drives growth strategies and brand awareness through innovative campaigns.",
     },
   ];
 
   return (
     <section className="team-section__container">
-      {/* New Heading */}
       <div className="team-section__header">
         <h2 className="team-section__main-heading">Meet The Team</h2>
         <div className="team-section__underline"></div>
       </div>
-
-      <h1 className="team-section__title">Our Team</h1>
 
       <div className="team-section__members">
         {teamMembers.map((member, index) => (
@@ -55,25 +52,25 @@ const Team = () => {
           >
             <div className="team-section__image">
               <img src={member.img} alt={member.name} />
-            </div>
-            <div className="team-section__info">
-              <h4>{member.name}</h4>
-              <h5>{member.title}</h5>
-              <p className="team-section__desc">{member.desc}</p>
-              <div className="team-section__social">
-                <a href="#"><FaFacebookF /></a>
-                <a href="#"><FaTwitter /></a>
-                <a href="#"><FaGooglePlusG /></a>
-                <a href="#"><FaYoutube /></a>
+              <div className="team-section__overlay">
+                <h4>{member.name}</h4>
+                <h5>{member.title}</h5>
+                <p>{member.desc}</p>
+                <div className="team-section__social">
+                  <a href="#"><FaFacebookF /></a>
+                  <a href="#"><FaTwitter /></a>
+                  <a href="#"><FaGooglePlusG /></a>
+                  <a href="#"><FaYoutube /></a>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <footer className="team-section__footer">
+      {/* <footer className="team-section__footer">
         <p>© 2025 Foursight Learning — All Rights Reserved</p>
-      </footer>
+      </footer> */}
     </section>
   );
 };

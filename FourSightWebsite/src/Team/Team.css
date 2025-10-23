@@ -1,63 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900");
 
 .team-section__container {
-  background-color: white;
+  background-color: #fff;
   min-height: 100vh;
   padding: 60px 0;
   text-align: center;
   font-family: "Raleway", sans-serif;
 }
 
-.team-section__title {
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 800;
-  font-size: 35px;
-  margin-bottom: 60px;
-}
-
-.team-section__members {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.team-section__member-card {
-  background-color: #fff;
-  width: 300px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  text-align: left;
-}
-
-.team-section__member-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* Zig-zag effect */
-.team-section__card--up {
-  transform: translateY(-40px);
-}
-.team-section__card--down {
-  transform: translateY(40px);
-}
-
+/* Heading */
 .team-section__header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .team-section__main-heading {
   font-size: 40px;
   font-weight: 800;
-  color:black;
+  color: #000;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -67,8 +27,37 @@
   width: 100px;
   height: 4px;
   background-color: red;
-  margin: 0 auto 40px auto;
+  margin: 0 auto;
   border-radius: 2px;
+}
+
+/* Layout */
+.team-section__members {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Card */
+.team-section__member-card {
+  position: relative;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+/* Zig-zag layout */
+.team-section__card--up {
+  transform: translateY(-40px);
+}
+.team-section__card--down {
+  transform: translateY(40px);
 }
 
 /* Remove zigzag on smaller screens */
@@ -79,40 +68,53 @@
   }
 }
 
+/* Image + Overlay */
 .team-section__image {
+  position: relative;
   width: 100%;
-  height: 390px;
-  overflow: hidden;
+  height: 380px;
 }
 
 .team-section__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.team-section__info {
+/* Overlay for desktop hover */
+.team-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.team-section__info h4 {
-  font-size: 18px;
+.team-section__overlay h4 {
+  font-size: 20px;
   font-weight: 700;
-  color: #222;
 }
 
-.team-section__info h5 {
+.team-section__overlay h5 {
   font-size: 15px;
-  color: #666;
-  margin-bottom: 10px;
   font-style: italic;
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
-.team-section__desc {
+.team-section__overlay p {
   font-size: 14px;
   line-height: 1.5;
-  color: #444;
   margin-bottom: 15px;
+  color: #ddd;
 }
 
 .team-section__social {
@@ -121,15 +123,39 @@
 }
 
 .team-section__social a {
-  color: #0077ff;
+  color: #fff;
   font-size: 18px;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .team-section__social a:hover {
-  color: #004f99;
+  color: #61cdff;
 }
 
+/* Hover activates overlay on desktop */
+.team-section__member-card:hover .team-section__overlay {
+  opacity: 1;
+}
+
+/* Mobile: overlay always visible */
+@media (max-width: 768px) {
+  .team-section__overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+    position: static;
+    color: #fff;
+  }
+
+  .team-section__image {
+    height: auto;
+  }
+
+  .team-section__overlay p {
+    color: #f9f9f9;
+  }
+}
+
+/* Footer */
 .team-section__footer {
   margin-top: 70px;
   color: #000;
