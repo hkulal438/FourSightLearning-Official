@@ -11,7 +11,9 @@ const Contact = () => {
             <div className="form-header">
               <h2 className="contact-title">Get in Touch</h2>
               <p className="contact-subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+                We’re here to help you achieve your goals. Whether you have
+                questions about our services, want to schedule a consultation,
+                or just want to say hello, feel free to reach out.
               </p>
             </div>
 
@@ -67,7 +69,7 @@ const Contact = () => {
           <div className="info-content">
             <h3 className="info-title">Reach us at</h3>
             <p className="info-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+             Have a question or feedback? Fill out the form below, and we’ll get back to you within 24 hours.
             </p>
 
             <div className="social-links">

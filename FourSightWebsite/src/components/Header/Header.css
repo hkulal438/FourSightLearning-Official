@@ -9,7 +9,7 @@
   z-index: 999;
 }
 
-/* Scroll state (optional darker shadow) */
+/* Scroll state */
 .header.scrolled {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
@@ -90,7 +90,7 @@
   padding: 10px 0;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown */
 .dropdown.active .dropdown-menu,
 .dropdown:hover .dropdown-menu {
   opacity: 1;
@@ -118,20 +118,24 @@
 
 /* Book Appointment Button */
 .appointment-btn {
-  background-color: #28a745;
-  color: #fff;
+  background-color: #28a745; /* main button color */
+  color: #fff !important; /* forces white text */
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
-.appointment-btn:hover {
-  background-color: #218838;
+.appointment-btn:hover,
+.appointment-btn:focus,
+.appointment-btn:active {
+  background-color: #20b16a; /* hover background */
+  color: #fff !important; /* keep text white on hover */
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* Hamburger Menu */
@@ -157,7 +161,7 @@
   transition: all 0.3s ease;
 }
 
-/* Hamburger animation when open */
+/* Hamburger animation */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }

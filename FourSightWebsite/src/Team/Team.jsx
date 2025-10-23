@@ -1,6 +1,11 @@
 import React from "react";
 import "./Team.css";
-import { FaFacebookF, FaTwitter, FaGooglePlusG, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGooglePlusG,
+  FaYoutube,
+} from "react-icons/fa";
 
 import Arun from "../images/Arun Peter.jpg";
 import Deepak from "../images/Deepak Raj.jpg";
@@ -10,28 +15,30 @@ import Madhu from "../images/Madhusudan.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Arun Peter",
-      title: "Founder & CEO",
-      img: Arun,
-      desc: "Arun is the visionary behind Foursight Learning, driving innovation and strategy across all domains.",
+      name: "Deeraj B Udyawar ",
+      title: "Managing Director",
+      img: Deeraj,
+      desc: "An accomplished Financial and Business Leadership Coach, Entrepreneur, and Motivational Speaker with 30 years of corporate expertise and inspiring leadership impact.",
     },
+
     {
       name: "Deepak Raj",
-      title: "CTO",
+      title: "Director–Research and Development",
       img: Deepak,
-      desc: "Deepak leads the technical initiatives and ensures our systems stay scalable and secure.",
+      desc: "Worked as a corporate Manager, award-winning leader, educator, and soft-skill trainer, with an inspiring journey in JCI, academia, corporate excellence, and community development.",
     },
     {
-      name: "Deeraj B",
-      title: "Creative Head",
-      img: Deeraj,
-      desc: "Deeraj crafts our visual identity and user experience with creativity and precision.",
+      name: "Arun Peter Pinto ",
+      title: "Director – Marketing",
+      img: Arun,
+      desc: "Co-founder of Automation Technologies, past JCI and Lions leader, passionate traveler, agriculturist, and committed social contributor, aspiring to inspire entrepreneurs through leadership and motivation",
     },
+
     {
-      name: "Madhusudan",
-      title: "Marketing Lead",
+      name: "Madhusudan Shinde",
+      title: "Director–Administartion",
       img: Madhu,
-      desc: "Madhu drives growth strategies and brand awareness through innovative campaigns.",
+      desc: "A dynamic professional with expertise in administration, training, and welfare, co-founder and director in multiple ventures, and a passionate leader dedicated to education, development, and organizational growth.",
     },
   ];
 
@@ -47,7 +54,9 @@ const Team = () => {
           <div
             key={index}
             className={`team-section__member-card ${
-              index % 2 === 0 ? "team-section__card--up" : "team-section__card--down"
+              index % 2 === 0
+                ? "team-section__card--up"
+                : "team-section__card--down"
             }`}
           >
             <div className="team-section__image">
@@ -57,10 +66,18 @@ const Team = () => {
                 <h5>{member.title}</h5>
                 <p>{member.desc}</p>
                 <div className="team-section__social">
-                  <a href="#"><FaFacebookF /></a>
-                  <a href="#"><FaTwitter /></a>
-                  <a href="#"><FaGooglePlusG /></a>
-                  <a href="#"><FaYoutube /></a>
+                  <a href="#">
+                    <FaFacebookF />
+                  </a>
+                  <a href="#">
+                    <FaTwitter />
+                  </a>
+                  <a href="#">
+                    <FaGooglePlusG />
+                  </a>
+                  <a href="#">
+                    <FaYoutube />
+                  </a>
                 </div>
               </div>
             </div>
